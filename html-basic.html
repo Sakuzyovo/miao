@@ -7,9 +7,9 @@
   <title>Document</title>
   <style>
     .p1{
-    background-image:-webkit-linear-gradient(red,#fd8403,yellow,pink,orange,rgb(126, 162, 126),rgb(72, 241, 241),silver,rgb(222, 80, 213),blue);
+    background:linear-gradient(red,#fd8403,yellow,pink,orange,rgb(126, 162, 126),rgb(72, 241, 241),silver,rgb(222, 80, 213),blue);
     -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    color:transparent;
     }
     .p2{
      background-image:-webkit-linear-gradient(rgb(222, 80, 213),blue,rgb(204, 26, 26),rgb(131, 86, 93),green,rgb(72, 241, 241),silver,rgb(222, 80, 213),blue);
@@ -18,6 +18,11 @@
     }
     .p3{
     background-image:-webkit-linear-gradient(green,rgb(72, 241, 241),silver,rgb(222, 80, 213),rgb(75, 75, 125),rgb(204, 26, 26));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    }
+    .p4{
+      background-image:-webkit-linear-gradient(rgb(78, 110, 78),rgb(76, 83, 83),silver,rgb(222, 80, 213),rgb(75, 75, 125),rgb(204, 26, 26));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     }
@@ -39,8 +44,8 @@ dignissimos! Totam, quae. Laudantium impedit vel officia harum debitis ullam rei
 <a href="https://www.jd.com/">在新窗口打开京东</a> <a href="mailto:87962856@qq.com">点我发邮件</a> <a href="#5">跳转到底部</a> <a href="download=简爱.jpg">点我下载文件</a><br>
 <img src="./img/c886c18b27ac3f4742a9862cd6d6b4683d3e84d2.jpg"  width="400"><br>
 <hr>
-<hr><br>
-<marquee>要玩就玩白银之城 要盖就盖神之宣告</marquee><br>
+<hr>
+<marquee><p class="p4">要玩就玩白银之城 要盖就盖神之宣告</p></marquee><br>
 <em>这几种强调</em> <strong>有什么 区别?</strong> <ins>这个？</ins> <em>这个？</em><br>
   &lt;!--这段注释需要出现在页面里面 --&gt;<br>
   <font size="2px" face="宋体" color="red">  function a() {<br>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <style>
+    /* section {
+      display: inline-block;
+      width: 10%;
+      text-align: center;
+      height: 100%;
+      line-height: 100%;
+      box-sizing: border-box;
+      padding-top: 12px;
+      vertical-align: top;
+    }
+
+    section:hover {
+      cursor: pointer;
+      background-color: aqua;
+    }
+
+    ul {
+      width: 200px;
+      height: 300px;
+      background-color: grey;
+      list-style: none;
+      border-radius: 5px;
+      display: none;
+    }
+
+    li {
+      box-sizing: border-box;
+      padding-left: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    li:hover {
+      background-color: rgb(74, 83, 87);
+    }
+
+    section:hover .file-first {
+      display: block;
+    }
+
+    .file-first {
+      position: fixed;
+      top: 40px;
+    }
+
+    .file-first>li:last-of-type::after {
+      content: "";
+      display: inline-block;
+      background: url("img/right.png");
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      margin-left: 50px;
+      vertical-align: -3px;
+    }
+
+    section:hover .flie-first-one {
+      display: block;
+    }
+
+    .flie-first-one {
+      position: fixed;
+      top: 40px;
+    }
+
+    .flie-first-one>li:nth-of-type(5)::after {
+      content: "";
+      display: inline-block;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+      margin-left: 100px;
+      vertical-align: -3px;
+    } */
+
+
+    .menu {
+      padding: 0;
+      list-style: none;
+      font-size: 0;
+      background-color: aquamarine;
+    }
+
+    .menu>li {
+      font-size: 16px;
+      display: inline-block;
+
+    }
+
+    .menu li:hover {
+      background-color: gold;
+    }
+
+    .menu li {
+      position: relative;
+      /*让其子菜单相对于它定位*/
+      white-space: nowrap;
+      /*所有的文字不折行*/
+
+
+
+
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+
+    }
+
+    .menu ul ul {
+      top: 0;
+      left: 100%;
+    }
+
+    /* li被hover时，其子菜单显示，所以是 li:hover > ul */
+    .menu li:hover>ul {
+      display: block;
+    }
+
+    .a,
+    .b,
+    .c,
+    .d {
+      margin-left: 100px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+  <!-- <section >文件
+      
+        <li>文件1</li>
+        <li>文件2</li>
+        <li>文件3</li>
+        <li>文件4</li>
+        <li>文件5
+          <ul>
+        <li>最近的文件</li>
+        <li>后面的文件</li>
+        <li>重新的文件
+
+        </li>
+        </ul>
+        </li>
+      </ul>
+    </section>
+    <section>选择</section>
+    <section>选择</section>
+    <section>选择</section> -->
+
+  <!-- <ul class="menu">
+  <li>文件
+    <ul>
+      <li>打开</li>
+      <li>保存</li>
+      <li>另存为...</li>
+      <li>退出</li>
+      <li>关闭文件</li>
+    </ul>
+  </li>
+  <li>编辑
+    <ul>
+      <li>增加字号</li>
+      <li>缩小字号</li>
+      <li>放大</li>
+      <li>缩小</li>
+    </ul>
+  </li>
+  <li>视图</li>
+  <li>帮助</li>
+</ul> -->
+
+
+  <ul class="menu">
+    <li class="a">目录
+      <ul>
+        <li>文件1<ul>
+            <li>文件1</li>
+            <li>文件2</li>
+            <li>文件3</li>
+          </ul>
+        </li>
+        <li>文件2</li>
+        <li>文件3</li>
+        <li>文件4</li>
+    </li>
+  </ul>
+  <li>
+  <li class="b">编辑
+    <ul>
+      <li>增加</li>
+      <li>缩小</li>
+      <li>放大</li>
+      <li>缩小</li>
+    </ul>
+  </li>
+  <li class="c">仓库</li>
+  <li class="d">文档</li>
+
+  </ul>
+</body>
+
+</html>

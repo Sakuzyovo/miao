@@ -83,7 +83,10 @@
       margin-left: 100px;
       vertical-align: -3px;
     } */
-
+    * {
+      padding: 0;
+      margin: 0;
+    }
 
     .menu {
       padding: 0;
@@ -95,11 +98,16 @@
     .menu>li {
       font-size: 16px;
       display: inline-block;
+      padding: 0 80px;
 
     }
 
-    .menu li:hover {
+    .menu li:nth-child(2n):hover {
       background-color: gold;
+    }
+
+    .menu li:not(:nth-child(2n)):hover {
+      background-color: cornflowerblue;
     }
 
     .menu li {
@@ -123,6 +131,11 @@
 
     }
 
+    .menu ul li {
+      padding: 0 80px;
+      padding-right: 10em;
+    }
+
     .menu ul ul {
       top: 0;
       left: 100%;
@@ -131,13 +144,6 @@
     /* li被hover时，其子菜单显示，所以是 li:hover > ul */
     .menu li:hover>ul {
       display: block;
-    }
-
-    .a,
-    .b,
-    .c,
-    .d {
-      margin-left: 100px;
     }
   </style>
 
@@ -197,7 +203,7 @@
   <ul class="menu">
     <li class="a">目录
       <ul>
-        <li>文件1<ul>
+        <li>文件<ul>
             <li>文件1</li>
             <li>文件2</li>
             <li>文件3</li>
@@ -208,7 +214,7 @@
         <li>文件4</li>
     </li>
   </ul>
-  <li>
+
   <li class="b">编辑
     <ul>
       <li>增加</li>

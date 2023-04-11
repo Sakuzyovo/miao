@@ -1,0 +1,37 @@
+.table-dark {
+  background-color: #212529;
+  color: white;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+td {
+  border-top: 1px solid white;
+  padding: 0.75em;
+  text-align: left;
+
+}
+
+.table-bordered>thead>tr>th {
+  border-bottom: 5px solid gray;
+}
+
+.table-bordered>tbody>tr:nth-child(1)>td,
+.table-bordered>tbody>tr:nth-child(1)>th {
+  border-top: 0px;
+}
+
+.table-hover.table-dark tbody tr:hover {
+  background-color: #7db3c6;
+}
+
+.table-striped {
+
+  background-color: #212529;
+  color: white;
+}

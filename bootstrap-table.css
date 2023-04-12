@@ -18,7 +18,7 @@ td {
 }
 
 .table-bordered>thead>tr>th {
-  border-bottom: 5px solid gray;
+  border-bottom: 2px solid gray;
 }
 
 .table-bordered>tbody>tr:nth-child(1)>td,

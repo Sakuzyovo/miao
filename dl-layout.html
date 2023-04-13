@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+    }
+
+    dl {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    dt {
+      background-color: beige;
+    }
+
+    dd {
+      background-color: cornflowerblue;
+    }
+
+    dl>.d2 {
+      grid-row: 2;
+      grid-column: 1;
+    }
+
+    .a {
+      grid-row: 4;
+      grid-column: 2/4;
+      background-color: blue;
+    }
+
+    .b {
+      grid-row: 5;
+      grid-column: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <dl>
+
+    <dt>导演</dt>
+    <dd>三</dd>
+    <dd>二</dd>
+
+
+    <dt class="d2">编剧</dt>
+    <dd>三</dd>
+    <dd>五</dd>
+
+
+
+    <dt>演员</dt>
+    <dd>王</dd>
+    <dd>六</dd>
+    <dd class="a">小黑子</dd>
+    <dd class="b">ikun</dd>
+
+  </dl>
+</body>
+
+</html>

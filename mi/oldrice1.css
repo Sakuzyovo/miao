@@ -12,11 +12,16 @@ header {
   color: white;
 }
 
-.zb>span,
+
 .yb>span {
   color: rgb(83, 91, 91);
   margin: 5px 2px 0px 2px;
 
+}
+
+.zb>span {
+  color: rgb(83, 91, 91);
+  margin: 5px 2px 0px 2px;
 }
 
 header a {
@@ -67,24 +72,24 @@ left: calc(100% - 180px);
 
 }
 
-.zb {
+/* .zb {
   float: left;
 
-  text-align: center;
-}
+  position: relative;
+} */
 
 
 .yb {
   float: right;
-
+  position: relative;
+  top: -40px;
 }
 
 .toubu {
 
-  position: relative;
 
   width: 1226px;
-  left: 146px;
+  margin: auto;
   height: 40px;
 }
 
@@ -93,13 +98,11 @@ left: calc(100% - 180px);
   position: absolute;
   width: 150px;
   height: 0px;
-  float: left;
-  margin-top: 10px;
-  margin-left: 760px;
+
   box-shadow: 0 0 20px gray;
   transition: .1s;
   top: 30px;
-  left: 0px;
+  left: -100px;
   z-index: 9999;
   overflow: hidden;
   background-color: white;
@@ -142,13 +145,13 @@ left: calc(100% - 180px);
   width: 56px;
   height: 56px;
 
-  z-index: 9999;
+  z-index: 999;
 }
 
 .logo:active {
   width: 50px;
   height: 50px;
-  z-index: 9999;
+  z-index: 999;
 }
 
 /* .a {
@@ -186,14 +189,14 @@ left: calc(100% - 180px);
   position: relative;
   width: 246px;
   height: 40px;
-  right: 140px;
+  left: 210px;
   border: 1px solid rgb(181, 178, 178);
 
 }
 
 .wenhao {
   position: relative;
-  right: 140px;
+  left: 210px;
 }
 
 .yss {

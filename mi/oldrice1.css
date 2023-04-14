@@ -230,7 +230,7 @@ left: calc(100% - 180px);
   background-color: white;
   overflow: hidden;
   transition: .3s;
-  z-index: 1;
+  z-index: 9;
   box-shadow: 0 10px 15px -15px rgb(0, 0, 0);
 
 
@@ -294,7 +294,7 @@ left: calc(100% - 180px);
   height: 220px;
 
 
-  z-index: 1;
+  z-index: 9;
 }
 
 .third {
@@ -306,7 +306,8 @@ left: calc(100% - 180px);
 
 .daohang {
   background-color: rgb(71, 73, 73);
-
+  position: relative;
+  z-index: 3;
   width: 240px;
   height: 460px;
 
@@ -454,21 +455,62 @@ left: calc(100% - 180px);
   display: grid;
 }
 
-.lunbo {
+
+
+.lunbo>a>img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 1;
+
+}
+
+.lunbowai {
   position: relative;
   height: 460px;
   width: 1226px;
-  z-index: -1;
+  z-index: 1;
 
   top: -460px;
   overflow: hidden;
 }
 
-.lunbo>a>img {
-  position: relative;
-  height: 460px;
-  width: 1226px;
+.lunbowai>input {
+  display: none;
+}
 
-  z-index: -1;
+.label {
+  position: absolute;
+  white-space: nowrap;
+  z-index: 9;
+  margin-left: 1050px;
+  margin-top: 420px;
+}
 
+.label>label {
+  transition: all 1s;
+  height: 7px;
+  width: 7px;
+  display: inline-block;
+  border: 2px solid gray;
+  z-index: 9;
+  cursor: pointer;
+  border-radius: 60px;
+}
+
+.lunbowai>input:nth-child(1):checked~.lunbo :nth-child(1),
+.lunbowai>input:nth-child(2):checked~.lunbo :nth-child(2),
+.lunbowai>input:nth-child(3):checked~.lunbo :nth-child(3),
+.lunbowai>input:nth-child(4):checked~.lunbo :nth-child(4),
+.lunbowai>input:nth-child(5):checked~.lunbo :nth-child(5) {
+
+  opacity: 1;
+}
+
+.lunbowai>input:nth-child(1):checked~.label label:nth-child(1),
+.lunbowai>input:nth-child(2):checked~.label label:nth-child(2),
+.lunbowai>input:nth-child(3):checked~.label label:nth-child(3),
+.lunbowai>input:nth-child(4):checked~.label label:nth-child(4) {
+  background-color: rgb(18, 137, 163);
 }

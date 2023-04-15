@@ -51,9 +51,9 @@ header a {
 
 .toubu {
 
-
+  background-color: rgb(51, 51, 51);
   width: 1226px;
-  margin: auto;
+  margin: 0 auto;
   height: 40px;
 }
 
@@ -97,9 +97,13 @@ header a {
 
 }
 
+.main {
+  width: 100%;
+}
+
 .c {
   width: 1526px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .logo {
@@ -122,6 +126,7 @@ header a {
 
 .d2 {
   position: relative;
+  margin: 0 auto;
 
   line-height: 99px;
   z-index: 1;

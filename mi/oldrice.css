@@ -1,4 +1,6 @@
 /* 很多错误重复多余代码 做完重新修改 */
+
+/* 顶端 */
 header {
   height: 40px;
   position: relative;
@@ -34,50 +36,10 @@ header a {
   position: relative;
 }
 
-
-main {
-
-
-
-
-
-  /* margin-right: 146px; */
-
-
-
-}
-
-/* .zk {
-height: calc(100% - 30px);
-position: absolute;
-padding: 90px;
-border: 1px solid;
-float: left;
-
-}
-
-.yk {
-height: calc(100% - 30px);
-float: right;
-padding: 90px;
-border: 1px solid;
-left: calc(100% - 180px);
-
-} */
-
+/* 顶端文字 */
 .second {
   height: 100px;
-
-
-
 }
-
-/* .zb {
-  float: left;
-
-  position: relative;
-} */
-
 
 .yb {
   float: right;
@@ -101,7 +63,7 @@ left: calc(100% - 180px);
 
   box-shadow: 0 0 20px gray;
   transition: .1s;
-  top: 30px;
+  top: 28px;
   left: -100px;
   z-index: 9999;
   overflow: hidden;
@@ -109,7 +71,7 @@ left: calc(100% - 180px);
 }
 
 
-
+/* 下载app图片 */
 .xiazai {
   padding-bottom: 20px;
   overflow: hidden;
@@ -154,22 +116,14 @@ left: calc(100% - 180px);
   z-index: 999;
 }
 
-/* .a {
-  display: inline-block;
-  width: 56px;
-  height: 56px;
-
-  background-image: url(http://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png);
-  background-size: 56px;
-} */
-
+/* LOGO+第二行文字+搜索栏 */
 
 .d2 {
   position: relative;
 
-  line-height: 100px;
+  line-height: 99px;
   z-index: 1;
-  height: 100px;
+  height: 99px;
 
 }
 
@@ -220,7 +174,7 @@ left: calc(100% - 180px);
   border: 1px solid black;
 }
 
-
+/* 下拉框 */
 
 .xiala {
 
@@ -258,54 +212,27 @@ left: calc(100% - 180px);
   margin-left: 30px;
 }
 
-.dingjia {
-  display: inline;
-  position: absolute;
-  margin-top: 160px;
-  margin-left: 63px;
-}
-
-.dingjia>span:nth-child(1) {
-  left: 5px;
-  position: relative;
-  font-size: 12px;
-  color: black;
-}
-
-.dingjia>span:nth-child(2) {
-  position: relative;
-  top: 15px;
-  right: 48px;
-  font-size: 12px;
-  color: orange;
-
-}
-
 .d2:has(span:hover) {
   border-bottom: 1px solid gray;
 }
 
 .xiala:hover {
-  height: 220px;
+  height: 221px;
   border-top: 1px solid gray;
 }
 
 .d2:has(span:hover)+.xiala {
-  height: 220px;
+  height: 221px;
 
 
   z-index: 9;
 }
 
-.third {
-  width: 1226px;
-  margin: auto;
-  height: 460px;
 
-}
+/* 导航栏 */
 
 .daohang {
-  background-color: rgb(71, 73, 73);
+  background: rgba(105, 101, 101, .6);
   position: relative;
   z-index: 3;
   width: 240px;
@@ -351,25 +278,6 @@ left: calc(100% - 180px);
   top: -15px;
 }
 
-/* .daohang>ul>li:nth-child(n+4):after {
-  content: ">";
-  position: relative;
-  left: 210px;
-  top: -15px;
-}
-
-.daohang>ul>li:nth-child(4):after {
-  content: ">";
-  position: relative;
-  left: 95px;
-}
-
-.daohang>ul>li:nth-child(9):after {
-  content: ">";
-  position: relative;
-  left: 95px;
-} */
-
 .daohang>ul>li:nth-child(n+11):after {
   content: "";
 
@@ -383,6 +291,39 @@ left: calc(100% - 180px);
   background-color: rgb(255, 255, 255);
 }
 
+/* 导航栏定价 */
+
+.dingjia {
+  display: inline;
+  position: absolute;
+  margin-top: 160px;
+  margin-left: 63px;
+}
+
+.dingjia>span:nth-child(1) {
+  left: 5px;
+  position: relative;
+  font-size: 12px;
+  color: black;
+}
+
+.dingjia>span:nth-child(2) {
+  position: relative;
+  top: 15px;
+  right: 48px;
+  font-size: 12px;
+  color: orange;
+
+}
+
+.third {
+  width: 1226px;
+  margin: auto;
+  height: 460px;
+
+}
+
+/* 导航栏图片 */
 .kuanshi {
 
   display: none;
@@ -455,13 +396,13 @@ left: calc(100% - 180px);
   display: grid;
 }
 
-
+/* 轮播图 */
 
 .lunbo>a>img {
   position: absolute;
   height: 100%;
   width: 100%;
-  opacity: 0;
+  opacity: 1;
   z-index: 1;
 
 }
@@ -499,11 +440,11 @@ left: calc(100% - 180px);
   border-radius: 60px;
 }
 
-.lunbowai>input:nth-child(1):checked~.lunbo :nth-child(1),
-.lunbowai>input:nth-child(2):checked~.lunbo :nth-child(2),
-.lunbowai>input:nth-child(3):checked~.lunbo :nth-child(3),
-.lunbowai>input:nth-child(4):checked~.lunbo :nth-child(4),
-.lunbowai>input:nth-child(5):checked~.lunbo :nth-child(5) {
+input:nth-child(1):checked~.lunbo :nth-child(1),
+input:nth-child(2):checked~.lunbo :nth-child(2),
+input:nth-child(3):checked~.lunbo :nth-child(3),
+input:nth-child(4):checked~.lunbo :nth-child(4),
+input:nth-child(5):checked~.lunbo :nth-child(5) {
 
   opacity: 1;
 }

@@ -1,6 +1,7 @@
 /* 很多错误重复多余代码 做完重新修改 */
 
 /* 顶端 */
+
 header {
   height: 40px;
   position: relative;
@@ -10,6 +11,7 @@ header {
 
 }
 
+/* 顶端 */
 .toubu>.zv>a:hover {
   color: white;
 }
@@ -398,14 +400,7 @@ header a {
 
 /* 轮播图 */
 
-.lunbo>a>img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 1;
-  z-index: 1;
 
-}
 
 .lunbowai {
   position: relative;
@@ -414,7 +409,17 @@ header a {
   z-index: 1;
 
   top: -460px;
-  overflow: hidden;
+
+}
+
+.lunbo>a>img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: 1.5s;
+
+  opacity: 0;
+
 }
 
 .lunbowai>input {
@@ -435,23 +440,25 @@ header a {
   width: 7px;
   display: inline-block;
   border: 2px solid gray;
-  z-index: 9;
+  z-index: -1;
   cursor: pointer;
   border-radius: 60px;
 }
 
-input:nth-child(1):checked~.lunbo :nth-child(1),
-input:nth-child(2):checked~.lunbo :nth-child(2),
-input:nth-child(3):checked~.lunbo :nth-child(3),
-input:nth-child(4):checked~.lunbo :nth-child(4),
-input:nth-child(5):checked~.lunbo :nth-child(5) {
-
+/* 轮播图选择器 */
+input:nth-child(1):checked~.lunbo a:nth-child(1) img,
+input:nth-child(2):checked~.lunbo a:nth-child(2) img,
+input:nth-child(3):checked~.lunbo a:nth-child(3) img,
+input:nth-child(4):checked~.lunbo a:nth-child(4) img,
+input:nth-child(5):checked~.lunbo a:nth-child(5) img {
+  z-index: 8;
   opacity: 1;
 }
 
 .lunbowai>input:nth-child(1):checked~.label label:nth-child(1),
 .lunbowai>input:nth-child(2):checked~.label label:nth-child(2),
 .lunbowai>input:nth-child(3):checked~.label label:nth-child(3),
-.lunbowai>input:nth-child(4):checked~.label label:nth-child(4) {
-  background-color: rgb(18, 137, 163);
+.lunbowai>input:nth-child(4):checked~.label label:nth-child(4),
+.lunbowai>input:nth-child(5):checked~.label label:nth-child(5) {
+  background-color: rgb(192, 187, 187);
 }

@@ -1,6 +1,9 @@
 /* 很多错误重复多余代码 做完重新修改 */
 
 /* 顶端 */
+body {
+  background-color: white;
+}
 
 header {
   height: 40px;
@@ -41,6 +44,8 @@ header a {
 /* 顶端文字 */
 .second {
   height: 100px;
+
+
 }
 
 .yb {
@@ -102,7 +107,7 @@ header a {
 }
 
 .c {
-  width: 1526px;
+  width: 1519px;
   margin: 0 auto;
 }
 
@@ -139,6 +144,7 @@ header a {
   padding-left: 15px;
   position: relative;
   left: 380px;
+
 }
 
 .d2>span:hover {
@@ -219,7 +225,7 @@ header a {
   margin-left: 30px;
 }
 
-.d2:has(span:hover) {
+.second>.d2:has(span:hover) {
   border-bottom: 1px solid gray;
 }
 
@@ -468,6 +474,7 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
   background-color: rgb(192, 187, 187);
 }
 
+/* 第四行 */
 .four {
   width: 1226px;
   margin: auto;
@@ -475,6 +482,7 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
   position: relative;
 }
 
+/* 团购服务 */
 .service>ul {
   position: absolute;
   width: 240px;
@@ -484,12 +492,13 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
   grid-template-rows: repeat(2, 1fr);
   padding: 0;
   list-style: none;
+  margin-top: 10px;
 }
 
 .service li {
   width: 70px;
   height: 82px;
-
+  opacity: 0.7;
 }
 
 
@@ -498,7 +507,7 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
   height: 24px;
   margin: 0 auto 4px;
   padding: 20px 20px 20px 30px;
-  opacity: 0.7;
+
 
 }
 
@@ -506,10 +515,36 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
   position: absolute;
   font-size: 10px;
   color: white;
-  opacity: 0.7;
+
   transform: translate(20px, -20px);
 }
 
-.service>ul>li:nth-child(n):hover>img {
+
+.service>ul li:hover {
   opacity: 1;
+}
+
+/* 团购服务右侧 */
+.service-right>ul {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  position: absolute;
+  padding: 0;
+  left: 250px;
+  list-style: none;
+  gap: 15px;
+  margin-top: 10px;
+  transition: .5s;
+  padding-bottom: 26px;
+}
+
+.service-right img {
+
+  width: 316px;
+  height: 165px;
+}
+
+.service-right>ul li:hover {
+  box-shadow: 0 0px 15px -8px gray;
 }

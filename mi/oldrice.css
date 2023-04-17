@@ -478,8 +478,9 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
 .four {
   width: 1226px;
   margin: auto;
-
+  height: 170px;
   position: relative;
+  padding-bottom: 26px;
 }
 
 /* 团购服务 */
@@ -536,7 +537,7 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
   gap: 15px;
   margin-top: 10px;
   transition: .5s;
-  padding-bottom: 26px;
+
 }
 
 .service-right img {
@@ -547,4 +548,116 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
 
 .service-right>ul li:hover {
   box-shadow: 0 0px 15px -8px gray;
+}
+
+/* 中间部分 */
+.main {
+
+  background-color: #f5f5f5;
+}
+
+.main-heart {
+  width: 1226px;
+  margin: 0 auto;
+
+}
+
+/* 新品发布会 */
+
+.five {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 120px;
+}
+
+.five img {
+  width: 1226px;
+  height: 120px;
+}
+
+
+/* 商品展示 第一部分 */
+.six {
+  height: 614px;
+  width: 1226px;
+  padding-bottom: 20px;
+}
+
+
+
+.six>ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0px;
+  float: right;
+  width: 992px;
+  height: 614px;
+
+
+}
+
+.six>ul li {
+  width: 234px;
+  height: 260px;
+  background-color: white;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: .3s;
+
+}
+
+.six>ul li>a {
+  text-decoration: none;
+}
+
+.six>ul img {
+  height: 160px;
+  width: 160px;
+  display: block;
+  margin: auto;
+}
+
+.big-1 {
+  float: left;
+  width: 234px;
+  height: 614px;
+  display: inline-block;
+  transition: .3s;
+}
+
+.big-1 img {
+  width: 234px;
+  height: 614px;
+}
+
+.font-1 {
+  color: black;
+}
+
+.font-2 {
+  font-size: 8px;
+  color: gray;
+}
+
+.font-3 {
+  color: rgb(250, 145, 65);
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.font-1,
+.font-2,
+.font-3 {
+  text-align: center;
+
+}
+
+.six>.big-1:hover,
+.six>ul li:hover {
+  box-shadow: 0 0px 15px -8px gray;
+  margin-top: -2px;
 }

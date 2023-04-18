@@ -577,6 +577,31 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
 
 
 /* 商品展示 第一部分 */
+.six-top {
+  width: 1226px;
+  margin: 0 auto;
+  height: 58px;
+  position: relative;
+}
+
+.six-top-1 {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 58px;
+}
+
+.six-top-2 {
+  position: absolute;
+  left: 1150px;
+  line-height: 58px;
+  color: black;
+}
+
+.six-top-2:hover {
+  color: orange;
+}
+
 .six {
   height: 614px;
   width: 1226px;
@@ -660,4 +685,73 @@ input:nth-child(5):checked~.lunbo a:nth-child(5) img {
 .six>ul li:hover {
   box-shadow: 0 0px 15px -8px gray;
   margin-top: -2px;
+}
+
+/* 侧边栏 */
+.last {
+  position: fixed;
+  right: 0;
+  z-index: 9999;
+  bottom: 70px;
+}
+
+.last div {
+  width: 82px;
+  height: 80px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid rgba(128, 128, 128, 0.14);
+
+}
+
+.last a {
+  text-decoration: none;
+}
+
+.last span {
+  line-height: 80px;
+  color: gray;
+}
+
+.last img {
+  width: 100px;
+  height: 100px;
+
+
+}
+
+.last-box {
+  position: relative;
+}
+
+.last-box>.last-img {
+  height: 162px;
+  width: 100px;
+  position: absolute;
+  right: 75px;
+  top: -3px;
+  text-align: center;
+  background-color: white;
+  padding: 14px;
+  margin-right: 20px;
+  opacity: 0;
+  transition: .1s;
+}
+
+.last-img>span {
+  line-height: 20px;
+  height: 82px;
+  margin-left: 5px;
+}
+
+.last span:hover {
+  color: orange;
+}
+
+.last-img>span:hover {
+  color: gray;
+}
+
+.last-box:hover>.last-img {
+  opacity: 1;
 }

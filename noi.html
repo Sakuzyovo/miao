@@ -346,10 +346,71 @@
   }
 </script>
 
-<script id="ch0104/16">
+<script id="ch0104/16" type="36">
+  var a = +prompt('请输入第一条线段的长度')
+  var b = +prompt('请输入第二条线段的长度')
+  var c = +prompt('请输入第三条线段的长度')
+  if (a + b > c || a + c > b || b + c > a) {
+    console.log('yes')
+  }
+  else {
+    console.log('no')
+  }
+</script>
+
+<script id="ch0104/17" type="37">
+  var n = +prompt('请输入一个年份来判断是否为闰年')
+  if (n % 4 == 0 && (n % 100 != 0 && n % 400 == 0) && n % 3200 != 0) {
+    console.log('Y')
+  }
+  else {
+    console.log('N')
+  }
+</script>
+
+<script id="ch0104/18" type="38">
+  var x = prompt('请输入x坐标')
+  var y = prompt('请输入y坐标')
+  if (-1 <= x <= 1 && -1 <= y <= 1) {
+    console.log('yes')
+  }
+  else {
+    console.log('no')
+  }
+</script>
+
+<script id="ch0104/19" type="39">
+  var a = prompt('请输入第一个整数')
+  var b = prompt('请输入第二个整数')
+  var c = prompt('请输入+,-,*,/')
+  if (c == '+') {
+    console.log(a + b)
+  }
+  else if (c == '-') {
+    console.log(a - b)
+  }
+  else if (c == '*') {
+    console.log(a * b)
+  }
+  else if (c == '/') {
+    console.log(a / b)
+  }
+  else if (a / b == 0) {
+    console.log('Divided by zero!')
+  } else if (c != '+' || c != '-' || c != '*' || c != '/') {
+    console.log('Invalid operator!')
+  }
+</script>
+
+<script id="ch0104/20" type="39">
 
 </script>
 
-<script id="ch0104/17">
 
+<script id="ch0104/21" type="40">
+  var a = prompt('请输入买了几个苹果')
+  var b = prompt('虫子几个小时吃一个苹果')
+  var c = prompt('过去了几个小时')
+  var d = Math.floor(a - c / b)
+  console.log(d)
 </script>

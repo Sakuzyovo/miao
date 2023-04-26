@@ -440,12 +440,28 @@
   console.log('$' + ((average / 12).toFixed(2)))
 </script>
 
-<script id="ch0105/03">
+<script id="ch0105/03" type="43">
 
+  var n = +prompt('请输入样本容量')
+  var pj = 0
+  for (var i = 1; i <= n; i++) {
+
+    var a = +prompt('请输入第' + i + '个样本数据')
+    var pj = pj + a
+  }
+  console.log((pj / n).toFixed(2))
 </script>
 
-<script id="ch0105/04">
+<script id="ch0105/04" type="44">
+  var n = +prompt('请输入整数有几个')
+  var c = 0
 
+  for (var i = 1; i <= n; i++) {
+    var a = +prompt('请输入第' + i + '个整数')
+    var c = c + a
+  }
+
+  console.log(c, (c / n).toFixed(5))
 </script>
 
 <script id="ch0105/05">

@@ -188,7 +188,7 @@
 
 <script id="ch0104/04" type="24">
   var n = prompt('请输入一个字符')
-  var n = n.charCodeAT(0)
+  var a = n.charCodeAt()
   if (a % 2 != 0) {
     console.log('YES')
   }
@@ -259,7 +259,7 @@
   } else if ((n % 3 != 0 && n % 5 != 0 && n % 7 == 0)) {
     console.log('7')
   } else {
-    console.log(n)
+    console.log('n')
   }
 </script>
 
@@ -379,7 +379,7 @@
   }
 </script>
 
-<script id="ch0104/19" type="39">
+<script id="ch0104/19" type="38">
   var a = prompt('请输入第一个整数')
   var b = prompt('请输入第二个整数')
   var c = prompt('请输入+,-,*,/')
@@ -392,12 +392,13 @@
   else if (c == '*') {
     console.log(a * b)
   }
-  else if (c == '/') {
+  else if (b == 0) {
+    console.log('Divided by zero!')
+  }
+  else if (c == '/' && b != 0) {
     console.log(a / b)
   }
-  else if (a / b == 0) {
-    console.log('Divided by zero!')
-  } else if (c != '+' || c != '-' || c != '*' || c != '/') {
+  else if (c != '+' || c != '-' || c != '*' || c != '/') {
     console.log('Invalid operator!')
   }
 </script>

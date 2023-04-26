@@ -495,12 +495,38 @@
   console.log(max - min)
 </script>
 
-<script id="ch0105/07">
-
+<script id="ch0105/07" type="47">
+  var n = +prompt('请输入运动员参加了几天')
+  var j = 0
+  var y = 0
+  var t = 0
+  var zong = 0
+  for (var i = 1; i <= n; i++) {
+    var a = +prompt('请输入第' + i + '天拿到的金牌数')
+    var j = j + a
+  }
+  for (var i = 1; i <= n; i++) {
+    var b = +prompt('请输入第' + i + '天拿到的银牌数')
+    var y = y + b
+  }
+  for (var i = 1; i <= n; i++) {
+    var c = +prompt('请输入第' + i + '天拿到的铜牌数')
+    var t = t + c
+  }
+  console.log(j, y, t, j + y + t)
 </script>
 
-<script id="ch0105/08">
-
+<script id="ch0105/08" type="48">
+  var n = +prompt('请输入多边形的角数')
+  var a = 0
+  var y = 0
+  var z = 0
+  for (var i = 1; i <= n - 1; i++) {
+    var a = +prompt('请输入第' + i + '个角的度数')
+    var z = z + a
+  }
+  var y = ((n - 2) * 180) - z
+  console.log(y)
 </script>
 
 <script id="ch0105/09">

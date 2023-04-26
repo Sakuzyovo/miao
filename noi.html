@@ -464,12 +464,35 @@
   console.log(c, (c / n).toFixed(5))
 </script>
 
-<script id="ch0105/05">
+<script id="ch0105/05" type="45">
+  var n = +prompt('请输入有几个人考试')
+  var a = 0
+  var max = 0
+  for (var i = 1; i <= n; i++) {
+    var a = +prompt('请输入第' + i + '个学生的成绩')
 
+    if (a >= max) {
+      max = a
+    }
+  }
+  console.log(max)
 </script>
 
-<script id="ch0105/06">
-
+<script id="ch0105/06" type="46">
+  var n = +prompt('请输入有几个序列数')
+  var a = 0
+  var max = 0
+  var min = max + 1
+  for (var i = 1; i <= n; i++) {
+    var a = +prompt('请输入第' + i + '个序列数')
+    if (a >= max) {
+      max = a
+    }
+    if (min > a) {
+      min = a
+    }
+  }
+  console.log(max - min)
 </script>
 
 <script id="ch0105/07">

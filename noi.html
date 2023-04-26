@@ -186,11 +186,11 @@
   }
 </script>
 
-<script id="ch0104/04" type="24" 有误>
+<script id="ch0104/04" type="24">
   var n = prompt('请输入一个字符')
-  var a = '' + n
+  var n = n.charCodeAT(0)
   if (a % 2 != 0) {
-    console.log('yes')
+    console.log('YES')
   }
   else {
     console.log('NO')
@@ -258,6 +258,8 @@
     console.log('5')
   } else if ((n % 3 != 0 && n % 5 != 0 && n % 7 == 0)) {
     console.log('7')
+  } else {
+    console.log(n)
   }
 </script>
 
@@ -266,9 +268,6 @@
   var math = prompt('请输入数学成绩')
   if (chinese >= 60 && math >= 60) {
     console.log('0')
-  }
-  else if (chinese < 60 && math > 60) {
-    conlose.log('1')
   }
   else {
     console.log('1')
@@ -332,10 +331,10 @@
   }
 </script>
 
-<script id="ch0104/15">
-  var a = prompt('请输入第一个数字')
-  var b = prompt('请输入第二个数字')
-  var c = prompt('请输入第三个数字')
+<script id="ch0104/15" type="35">
+  var a = +prompt('请输入第一个数字')
+  var b = +prompt('请输入第二个数字')
+  var c = +prompt('请输入第三个数字')
   if (a > b && a > c) {
     console.log(a)
   }

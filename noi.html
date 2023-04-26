@@ -150,3 +150,207 @@
   var a = prompt('请输入幂次方')
   console.log(2 ** a)
 </script>
+
+<script id="ch0104/01" type="21">
+  var n = prompt('请输入一个整数N')
+  if (n > 0) {
+    console.log('positive')
+  }
+  else if (n == 0) {
+    console.log('zero')
+  }
+  else {
+    console.log('negative')
+  }
+</script>
+
+<script id="ch0104/02" type="22">
+  var n = prompt('请输入一个数字 将返回他的绝对值')
+  if (n > 0) {
+    console.log(n)
+  }
+  else {
+    console.log(-1 * n)
+  }
+
+</script>
+
+
+<script id="ch0104/03" type="23">
+  var n = prompt('请输入一个大于0的正整数')
+  if (n % 2 != 0) {
+    console.log('odd')
+  }
+  else {
+    console.log('even')
+  }
+</script>
+
+<script id="ch0104/04" type="24" 有误>
+  var n = prompt('请输入一个字符')
+  var a = '' + n
+  if (a % 2 != 0) {
+    console.log('yes')
+  }
+  else {
+    console.log('NO')
+  }
+</script>
+
+<script id="ch0104/05" type="25">
+  var x = prompt('请输入一个整数x')
+  var y = prompt('请输入一个整数y')
+  if (x > y) {
+    console.log('>')
+  }
+  else if (x == y) {
+    console.log('=')
+  }
+  else {
+    console.log('<')
+  }
+</script>
+
+<script id="ch0104/06" type="26">
+  var n = prompt('请输入一个正整数')
+  if (10 <= n && n < 100) {
+    console.log('1')
+  }
+  else {
+    console.log('0')
+  }
+</script>
+
+<script id="ch0104/07" type="27">
+  var a = prompt('请输入幸运的数量')
+  var b = prompt('请输入鼓励的数量')
+  if (a >= 10 || b >= 20) {
+    console.log('1')
+  }
+  else {
+    console.log('0')
+  }
+</script>
+
+<script id="ch0104/08" type="28">
+  var n = prompt('请输入一个整数n')
+  if (n % 3 == 0 && n % 5 == 0) {
+    console.log('YES')
+  } else {
+    console.log('NO')
+  }
+</script>
+
+<script id="ch0104/09" type="29">
+  var n = prompt('请输入一个整数n')
+  if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) {
+    console.log('3', '5', '7')
+  } else if ((n % 3 == 0 && n % 5 == 0 && n % 7 != 0)) {
+    console.log('3', '5')
+  }
+  else if ((n % 3 == 0 && n % 7 == 0 && n % 5 != 0)) {
+    console.log('3', '7')
+  } else if ((n % 5 == 0 && n % 7 == 0 && n % 3 != 0)) {
+    console.log('5', '7')
+  } else if ((n % 3 == 0 && n % 5 != 0 && n % 7 != 0)) {
+    console.log('3')
+  } else if ((n % 3 != 0 && n % 5 == 0 && n % 7 != 0)) {
+    console.log('5')
+  } else if ((n % 3 != 0 && n % 5 != 0 && n % 7 == 0)) {
+    console.log('7')
+  }
+</script>
+
+<script id="ch0104/10" type="30">
+  var chinese = prompt('请输入语文成绩')
+  var math = prompt('请输入数学成绩')
+  if (chinese >= 60 && math >= 60) {
+    console.log('0')
+  }
+  else if (chinese < 60 && math > 60) {
+    conlose.log('1')
+  }
+  else {
+    console.log('1')
+  }
+</script>
+
+<script id="ch0104/11" type="31">
+  var n = prompt('请输入当天是星期几')
+  if (n == 1 || n == 3 || n == 5) {
+    console.log('NO')
+  }
+  else if (n == 2 || n == 4 || n == 6 || n == 7) {
+    console.log('YES')
+  }
+</script>
+
+
+<script id="ch0104/12" type="32">
+  var n = prompt('一次办事需要的距离')
+  var b = 27 + 23 + n / 3
+  var w = n / 1.2
+  if (b < w) {
+    console.log('Bike')
+  }
+  else if (b == w) {
+    console.log('All')
+  }
+  else if (b > w) {
+    console.log('Walk')
+  }
+</script>
+
+<script id="ch0104/13" type="33">
+  var n = prompt('请输入一个数字')
+  if (0 <= n && n < 5) {
+    console.log((-1 * n + 2.5).toFixed(3))
+  }
+  else if (5 <= n && n < 10) {
+    console.log((2 - 1.5(n - 3)(n - 3)).toFixed(3))
+  }
+  else if (10 <= n && n < 20) {
+    console.log((n / 2 - 1.5).toFixed(3))
+  }
+</script>
+
+<script id="ch0104/14" type="34">
+  var g = prompt('请输入物品重量')
+  var a = prompt('如果加急请输入y,不加急请输入n')
+  var j = Math.ceil((g - 1000) / 500)
+  if (g <= 1000 && a == 'y') {
+    console.log((8 + 5) + '')
+  }
+  else if (g <= 1000 && a == 'n') {
+    console.log('8')
+  }
+  else if (g > 1000 && a == 'y') {
+    console.log(8 + j * 4 + 5)
+  }
+  else if (g > 1000 && a == 'n') {
+    console.log(8 + j * 4)
+  }
+</script>
+
+<script id="ch0104/15">
+  var a = prompt('请输入第一个数字')
+  var b = prompt('请输入第二个数字')
+  var c = prompt('请输入第三个数字')
+  if (a > b && a > c) {
+    console.log(a)
+  }
+  else if (b > a && b > c) {
+    console.log(b)
+  }
+  else if (c > a && c > b) {
+    console.log(c)
+  }
+</script>
+
+<script id="ch0104/16">
+
+</script>
+
+<script id="ch0104/17">
+
+</script>

@@ -672,12 +672,42 @@
   console.log(h)
 </script>
 
-<script id="ch0105/18">
+<script id="ch0105/18" type="58">
+  var n = +prompt('请输入数据的组数')
+  var a = +prompt('请输入鸡尾酒疗法总病例数')
+  var b = +prompt('请输入鸡尾酒疗法治疗有效病例数')
+  var x = (b / a) * 100
+  var y = 0
+  for (var i = 1; i <= n - 1; i++) {
+    var d = +prompt('请输入第' + i + '组新疗法总病例数')
+    var e = +prompt('请输入第' + i + '组新疗法治疗有效数')
+    var y = (e / d) * 100
+    if (y - x > 5) {
+      console.log('better')
+    }
+    else if (x - y > 5) {
+      console.log('worse')
+    }
+    else (
+      console.log('same')
+    )
+  }
 
 </script>
 
-<script id="ch0105/19">
+<script id="ch0105/19" type="59">
+  var n = +prompt('请输入有几个屋顶' )
+  var m = 0
+  var time = 0
+  for (var i = 1; i <= n; i++) {
+    var x = +prompt('请输入第' + i + '个屋顶的x轴米数')
+    var y = +prompt('请输入第' + i + '个屋顶的y轴米数')
+    var r = +prompt('请输入第' + i + '个屋顶里有几个人')
+    var q = Math.sqrt((x ** 2 + y ** 2))
+    var time = (q / 50) * 2 + r + r * 0.5
 
+  }
+  console.log(Math.ceil(time))
 </script>
 
 <script id="ch0105/20">

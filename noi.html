@@ -622,28 +622,54 @@
   console.log(Math.trunc(M))
 </script>
 
-<script id="ch0105/16">
+<script id="ch0105/16" type="56">
   var N = +prompt('请输入年薪')
   var K = +prompt('房子每年涨百分之几')
+  var b = 200
   var M = 0
-  var n = 0
-  for (var i = 1; i <= 20; i++) {
-    var M = (200 + (200 * (K / 100)))
-    var n = N / M
-    if (n <= 20) {
-      console.log('M')
+  var q = 0
+
+  for (var i = 1; i < Infinity; i++) {
+    var q = q + N
+
+
+
+    if (q >= b) {
+
+      var M = i
+      break
     }
+    else if (i > 21) {
+      var M = i
+      break
+    }
+    var b = b + (b * (K / 100))//涨一年的价格
+  }
+  if (M <= 20) {
+    console.log(M)
+  }
+  else if (M > 20) {
+    console.log('Impossible')
   }
 
-  console.log(M)
-  // while (M > 20) {
-  //   console.log('Impossible')
-  // }
+
+
 
 </script>
 
-<script id="ch0105/17">
+<script id="ch0105/17" type="57">
 
+  var k = +prompt('请输入需要的数字是第几位')
+  var a = 0
+  var b = 1
+  var h = 0
+  for (var i = 0; i < k - 1; i++) {
+    var h = a + b
+    var a = b
+    var b = h
+  }
+
+  console.log(h)
 </script>
 
 <script id="ch0105/18">

@@ -529,6 +529,135 @@
   console.log(y)
 </script>
 
-<script id="ch0105/09">
+<script id="ch0105/09" type="49">
+  var a = +prompt('请输入整数a')
+  var b = +prompt('请输入整数b')
+  var c = 0
+  for (var i = a; i <= b; i++) {
+    if (i % 2 != 0) {
+
+      var c = c + i
+    }
+  }
+  console.log(c)
+</script>
+
+<script id="ch0105/10" type="50">
+  var m = +prompt('请输入整数m')
+  var n = +prompt('请输入整数n')
+  var c = 0
+  for (var i = m; i <= n; i++) {
+    if (i % 17 == 0) {
+      var c = c + i
+    }
+  }
+  console.log(c)
+</script>
+
+<script id="ch0105/11" type="51">
+  var k = +prompt('请输入有几个正整数')
+  var one = 0
+  var five = 0
+  var ten = 0
+  for (var i = 1; i <= k; i++) {
+    var n = +prompt('请输入第' + i + '个正整数')
+    if (n == 1) {
+      var one = one + 1;
+    }
+    if (n == 5) {
+      var five = five + 1;
+    }
+    if (n == 10) {
+      var ten = ten + 1;
+    }
+  }
+  console.log(one, five, ten)
+</script>
+
+<script id="ch0105/12" type="52">
+  var n = +prompt('请输入有几个序列数')
+  var m = +prompt('请输入整数m')
+  var d = 0
+  for (var i = 1; i <= n; i++) {
+    var c = +prompt('请输入第' + i + '个正整数')
+    if (c == m) {
+      var d = d + 1
+    }
+
+  }
+
+  console.log(d)
+</script>
+
+<script id="ch0105/13" type="53">
+  var a = +prompt('请输入整数a')
+  var n = +prompt('请输入正整数n')
+  var c = a ** n
+  while (c > 1000000) {
+    var a = +prompt('请输入整数a')
+    var n = +prompt('请输入正整数n')
+    var c = a ** n
+  }
+  console.log(c)
+</script>
+
+<script id="ch0105/14" type="54">
+  var x = +prompt('请输入人口基数')
+  var n = +prompt('请输入过了几年')
+ 
+  for (var i = 1; i <= n; i++) {
+    var x = x + (x * 0.001)
+  }
+  console.log(x.toFixed(4))
+</script>
+
+<script id="ch0105/15" type="55">
+  var R = +prompt('请输入年利率')
+  var M = +prompt('请输入约翰有多少钱')
+  var Y = +prompt('请输入要投资多少年')
+  var z = 0
+  for (var i = 1; i <= Y; i++) {
+    var M = M + (M * (R / 100))
+  }
+  console.log(Math.trunc(M))
+</script>
+
+<script id="ch0105/16">
+  var N = +prompt('请输入年薪')
+  var K = +prompt('房子每年涨百分之几')
+  var M = 0
+  var n = 0
+  for (var i = 1; i <= 20; i++) {
+    var M = (200 + (200 * (K / 100)))
+    var n = N / M
+    if (n <= 20) {
+      console.log('M')
+    }
+  }
+
+  console.log(M)
+  // while (M > 20) {
+  //   console.log('Impossible')
+  // }
+
+</script>
+
+<script id="ch0105/17">
+
+</script>
+
+<script id="ch0105/18">
+
+</script>
+
+<script id="ch0105/19">
+
+</script>
+
+<script id="ch0105/20">
+
+</script>
+
+<script id="ch0105/21">
 
 </script>

@@ -628,15 +628,10 @@
   var b = 200
   var M = 0
   var q = 0
-
-  for (var i = 1; i < Infinity; i++) {
+for (var i = 1; i < Infinity; i++) {
     var q = q + N
-
-
-
-    if (q >= b) {
-
-      var M = i
+   if (q >= b) {
+   var M = i
       break
     }
     else if (i > 21) {
@@ -846,10 +841,126 @@
 
 </script>
 
-<script id="ch0105/27">
+<script id="ch0105/27" type="67">
+  var k = +prompt('请输入一个整数')
+  var sn = 1
+  for (var i = 2; i <= 99999; i++) {
+    sn = sn + 1 / i
+    if (sn > k) {
+      console.log(i)
+      break
+    }
+  }
+</script>
+
+<script id="ch0105/28" type="68">
+
+  var n = +prompt('请输入一个整数')
+ 
+  var a = 0
+  var str = ''
+  while (n % 10 != 0) {
+    a = n % 10
+    n = n - a
+    n = n / 10
+    str = str + a + ' '
+  }
+  console.log(str);
+</script>
+
+<script id="ch0105/29" type="69">
+
+  var n = +prompt('请输入一个整数')
+  var b = 0
+  if (n > 0) {
+    while (n > 0) {
+      b = b * 10 + n % 10
+      n = Math.trunc(n / 10)
+
+    }
+    console.log(b)
+  }
+  if (n < 0) {
+    n = -1 * n
+    while (n > 0) {
+      b = b * 10 + n % 10
+      n = Math.trunc(n / 10)
+    }
+    console.log(-1 * b)
+  }
+</script>
+
+<script id="ch0105/30" type="70">
+  var m = +prompt('请输入一个整数')
+  var k = +prompt('请输入有几个3')
+  var a = m
+  var str = 0
+  while (m > 0) {
+    if (m % 10 == 3) {
+      str = str + 1
+    }
+    m = Math.trunc(m / 10)
+  }
+  if (a % 19 == 0 && str == k) {
+    console.log('YES')
+  }
+  else {
+    console.log('NO')
+  }
+</script>
+
+<script id="ch0105/31" type="71">
+  var n = +prompt('请输入有几盏灯')
+  var m = +prompt('请输入有几个人')
+  var str = ''
+  for (var i = 1; i <= n; i++) {
+    var a = true
+    for (var b = 1; b <= m; b++) {
+      if (i % b == 0) {
+        a = !a
+      }
+    }
+    if (a == false) {
+      str = str + ',' + i
+    }
+
+  }
+  console.log(str)
+</script>
+
+<script id="ch0105/32" type="72">
+  debugger
+  var n = +prompt('请输入一个正整数n')
+  var q1 = 2
+  var p1 = 1
+  var c = 0
+  var d = 0
+  for (var i = 1; i <= n; i++) {
+    c = c + (q1 / p1)
+    var d = q1
+
+    q1 = p1 + q1
+    p1 = d
+    d = 0
+
+
+  }
+
+  console.log(c.toFixed(4))
+</script>
+
+<script id="ch0105/33">
 
 </script>
 
-<script id="ch0105/28">
+<script id="ch0105/34">
+
+</script>
+
+<script id="ch0105/35">
+
+</script>
+
+<script id="ch0105/36">
 
 </script>

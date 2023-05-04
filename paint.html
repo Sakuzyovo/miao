@@ -1,0 +1,230 @@
+<style>
+  canvas {
+    border: 2px solid red;
+    display: block;
+    margin: auto;
+    background-color: gray;
+  }
+</style>
+
+<body>
+  <canvas width="1200" height="1250">
+
+  </canvas>
+</body>
+
+<script id="">
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.trunc(x)
+    y = Math.trunc(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+     * 你的任务：通过调用dot函数，实现：
+     * 需要注意，dot函数不能接收浮点数，如果参数为浮点数，会被转换为整数后绘制
+        *1 在 坐标 (42, 42) 画出一个点
+        *2 画一条水平实线，粗细为一个像素
+        *3 画一条水平实线，粗细为一个像素
+        *4 画一条一个实点一个空点的虚线
+        *5 画一条两个实点两个空点的虚线
+        *6 画一条三个实点两个空点的虚线
+        *7 画一条45度的斜线
+        *8 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+        *9 画一条跨越画布左上角和右下角的对角线
+        * 画一个空心矩形
+        * 画一个实心矩形
+        * 画两个空心的圆，圆心在画布中心：
+          * 一个半径为50像素
+          * 一个半径为200像素
+        * 画一个实心的圆，半径至少为100像素
+        * 画一个【大小位置都合适】的sin(x)的图像
+  
+        * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+        * 如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变换后的色彩空间某一面
+          可以考虑如下几种矩阵：
+             2 0
+             0 2
+             ------
+             1  0.27
+             0  1
+             ------
+             0.5    0.87
+             -0.87  0.5
+  
+     */
+</script>
+<script type="1">
+ var y = 0, x = 0, r = 50
+  for (var x = -50; x <= r; x++) {
+    y = Math.sqrt(r ** 2 - x ** 2)
+    console.log(dot(x + 100, y + 250, 'rbg(100,100,100)'))
+    console.log(dot(-x + 100, -y + 250, 'rbg(100,100,100)'))
+  }
+
+  //画矩形
+  function line(x1, y1, x2, y2, color) {
+    // var x1 = 10
+    // var y1 = 20
+    // var x2 = 100
+    // var y2 = 45
+
+    var dx = x2 - x1
+    var dy = y2 - y1
+    var stepy = dy / dx
+    var y = y1
+    var ty = 0
+    for (var x = x1; x <= x2; x++) {
+      dot(x, y, 'aqua')
+      ty += stepy
+      if (ty >= 1) {
+        y++
+        ty -= 1
+      }
+    }
+  }
+
+  line(30, 40, 120, 60)
+
+  //画圆
+  function circle(cx, cy, r, color)
+  for (var x = -start; x <= start; x++) {
+    var y = Math.sqrt(r * r - x * x)
+    dot(x + cx, y + cy)
+    dot(x + cx, -y + cy)
+  }
+  for (var y = -start; y <= start; y++) {
+    var y = Math.sqrt(r * r - y * y)
+    dot(x + cx, y + cy)
+    dot(-x + cx, y + cy)
+  }
+
+  //画出彩色的一面
+  for (var x = 0; x < 256; x++) {
+    for (var y = 0; y < 256; y++) {
+      var x1 = 2 * x
+      var y1 = x * y
+      dot(x1, y1, 'rgb(' + x + ',' + y + ',255)')
+    }
+  }
+</script>
+<script>
+  // * 1 在 坐标(42, 42) 画出一个点
+  for (var i = 1; i < 200; i++) {
+    dot(i, i)
+  }
+  // 2
+  y = 40
+  for (var x = 1; x < 200; x++) {
+    dot(x, y)
+  }
+  // 3
+  y = 60
+  for (var x = 1; x < 200; x += 2) {
+    dot(x, y)
+  }
+  // 4
+  y = 80
+  for (var x = 1; x < 200; x += 4) {
+    dot(x, y)
+    dot(x1 = x + 1, y)
+
+  }
+  // 7
+  y = 220
+  for (var x = 200; x <= 320; x++) {
+    dot(x, y + 100, 'red')
+    dot(y, x + 100, 'red')
+    dot(x, 200 + 100, 'red')
+    dot(200, x + 100, 'red')
+  }
+  y = 320
+  for (var x = 200; x <= 320; x++) {
+    dot(x, y + 100, 'red')
+    dot(y, x + 100, 'red')
+    dot(x, 300 + 100, 'red')
+    dot(300, x + 100, 'red')
+  }
+  y = 100
+  for (var x = 1; x < 200; x += 5) {
+    dot(x, y)
+    dot(x1 = x + 1, y)
+    dot(x2 = x1 + 1, y)
+  }
+
+  // 9
+
+  for (var x = -30 * .7; x <= 30 * .7; x++) {
+    var y = Math.sqrt(30 * 30 - x * x)
+    dot(x + 260, y + 360)
+    dot(-x + 260, -y + 360)
+  }
+  for (var y = -30 * .7; y <= 30 * .7; y++) {
+    var x = Math.sqrt(30 * 30 - y * y)
+    dot(x + 260, y + 360)
+    dot(-x + 260, y + 360)
+  }
+
+  var x1 = 100
+  for (i = 100; i <= 200; i++) {
+
+    dot(x1, i, 'rgb(white)')
+    dot(x1 + 100, i, 'rgb(white)')
+    dot(i, x1, 'rgb(white)')
+    dot(i, x1 + 100, 'rgb(white)')
+  }
+  for (i = 50; i <= 100; i++) {
+    for (var j = 200; j <= 250; j++) {
+
+      dot(i + 40, j + 50, 'rbg(white)')
+    }
+  }
+
+
+  for (var x = -30 * .7; x <= 30 * .7; x++) {
+    var y = Math.sqrt(30 * 30 - x * x)
+    dot(x + 360, y + 360)
+    dot(-x + 360, -y + 360)
+
+  }
+
+  for (var y = -30 * .7; y <= 30 * .7; y++) {
+    var x = Math.sqrt(30 * 30 - y * y)
+    dot(x + 360, y + 360)
+    dot(-x + 360, y + 360)
+  }
+
+  var x = 0, y = 100, r = 100
+  for (x = -50; x <= 50; x++) {
+    dot(x, y, 'black')
+  }
+
+  r = 100
+  for (x = -r; x <= r; x++) {
+    var Y = Math.sqrt(r ** 2 - x ** 2)
+    for (y = -Y; y <= Y; y++) {
+      dot(x + 400, y + 120, 'black')
+    }
+  }
+  for (x = 0; x <= 256; x++) {
+    for (y = 0; y < 256; y++) {
+      dot(x + 700, y + 500, 'rgb(' + x + ',255,' + y + ')')
+    }
+  }
+
+  for (x = -50; x < 50; x++) {
+    var y = Math.sqrt(50 * 50 - x * x)
+    dot(x + 600, y + 600)
+    dot(x + 600, -y + 600)
+  }
+  for (x = -200; x < 200; x++) {
+    var y = Math.sqrt(200 * 200 - x * x)
+    dot(x + 600, y + 600)
+    dot(x + 600, -y + 600)
+  }
+
+</script>

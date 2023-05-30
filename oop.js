@@ -1,5 +1,5 @@
 class Complex {
-  Complex(real, imag) {
+  constructor(real, imag) {
     this.real = real
     this.imag = imag
   }
@@ -28,7 +28,7 @@ class Complex {
   }
 }
 class Stack {
-  Stack() {
+  constructor() {
     this.head = null
     this.nodeCount = 0
   }
@@ -61,6 +61,12 @@ class Stack {
 }
 
 class Vector {
+
+  constructor(x, y) {
+    this.x = x
+    this.y = y
+  }
+
   plus(vector) {
     var x = this.x + vector.x
     var y = this.y + vector.y
@@ -78,7 +84,7 @@ class Vector {
 
 
 class LinkedList {
-  LinkedList(...initVals) {
+  constructor() {
     this.head = null
     this.tail = null
 
@@ -133,7 +139,7 @@ class LinkedList {
 }
 
 class Queue {
-  Queue() {
+  constructor() {
     this.head = null
     this.tail = null
     this.nodeCount = 0
@@ -173,7 +179,7 @@ class Queue {
 }
 
 class MySet {
-  Set() {
+  constructor() {
     this._elements = []
   }
   add(val) {
@@ -196,7 +202,7 @@ class MySet {
 }
 
 class MyMap {
-  Map() {
+  constructor() {
     this._keys = []
     this._vals = []
   }

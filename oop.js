@@ -27,3 +27,35 @@ class Complex {
     return new Complex(real, imag)
   }
 }
+class Stack {
+  Stack() {
+    this.head = null
+    this.nodeCount = 0
+  }
+  push(val) {
+    var node = {
+      val, next: null
+    }
+    this.nodeCount++
+    if (this.head == null) {
+      this.head = node
+    } else {
+      node.next = this.head
+      this.head = node
+    }
+  }
+  pop() {
+    if (this.head == null) {
+      return undefined
+    }
+    this.nodeCount--
+    var result = this.head.val
+    this.head = this.head.next
+    return result
+  }
+  size() {
+    return this.nodeCount
+  }
+
+
+}

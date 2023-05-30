@@ -1,4 +1,4 @@
-class HashMap2 {
+class Complex {
   Complex(real, imag) {
     this.real = real
     this.imag = imag

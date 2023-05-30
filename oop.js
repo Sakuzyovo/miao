@@ -71,7 +71,7 @@ class Vector {
     var y = this.y - vector.y
     return new Vector(x, y)
   }
-  get function() {
+  get length() {
     return Math.sqrt(this.x * this.x + this.y * this.y)
   }
 }
@@ -121,7 +121,7 @@ class LinkedList {
     }
     return p.val
   }
-  get function() {
+  get length() {
     var p = this.head
     var l = 0
     while (p) {
@@ -129,6 +129,113 @@ class LinkedList {
       p = p.next
     }
     return l
+  }
+}
+
+class Queue {
+  Queue() {
+    this.head = null
+    this.tail = null
+    this.nodeCount = 0
+  }
+
+  add(val) {
+    var node = {
+      val, next: null
+    }
+    if (this.head == null) {
+      this.head = this.tail = node
+    }
+
+    this.tail.next = node
+    this.tail = node
+    this.nodeCount++
+  }
+  pop() {
+    if (this.head == null) {
+      return
+    }
+    this.nodeCount--
+
+    if (this.head == this.tail) {
+      var result = this.head.val
+      this.head = this.tail = null
+      return result
+    }
+
+    var result = this.head.val
+    this.head = this.head.next
+    return result
+  }
+  get size() {
+    return this.nodeCount
+  }
+}
+
+class MySet {
+  Set() {
+    this._elements = []
+  }
+  add(val) {
+    if (!this.has(val)) {
+      this._elements.push(val)
+    }
+  }
+  remove(val) {
+    if (this.has(val)) {
+      var idx = this._elements.indexOf(val)
+      this._elements.splice(idx, 1)
+    }
+  }
+  has(val) {
+    return this._elements.includes(val)
+  }
+  size() {
+    return this._elements.length
+  }
+}
+
+class MyMap {
+  Map() {
+    this._keys = []
+    this._vals = []
+  }
+  set(key, val) {
+    var keyIdx = this._keys.indexOf(key)
+    if (keyIdx >= 0) {
+      this._vals[keyIdx] = val
+    } else {
+      this._keys.push(key)
+      this._vals.push(val)
+    }
+    return this
+  }
+
+  get(key) {
+    var keyIdx = this._keys.indexOf(key)
+    if (keyIdx >= 0) {
+      return this._vals[keyIdx]
+    }
+  }
+
+  has(key) {
+    if (this._keys.includes(key)) {
+      return true
+    } else {
+      return false
+    }
+  }
+  delete(key) {
+    var keyIdx = this._keys.indexOf(key)
+    if (keyIdx >= 0) {
+      this._keys.splice(keyIdx, 1)
+      this._vals.splice(keyIdx, 1)
+      return true
+    }
+    return false
+  }
+  get size() {
+    return this._keys.length
   }
 }
 

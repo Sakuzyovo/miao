@@ -59,3 +59,22 @@ class Stack {
 
 
 }
+
+class Vector {
+  plus(vector) {
+    var x = this.x + vector.x
+    var y = this.y + vector.y
+    return new Vector(x, y)
+  }
+  minus(vector) {
+    var x = this.x - vector.x
+    var y = this.y - vector.y
+    return new Vector(x, y)
+  }
+  get function() {
+    return Math.sqrt(this.x * this.x + this.y * this.y)
+  }
+}
+
+
+

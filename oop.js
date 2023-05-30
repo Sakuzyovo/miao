@@ -53,7 +53,7 @@ class Stack {
     this.head = this.head.next
     return result
   }
-  size() {
+  get size() {
     return this.nodeCount
   }
 
@@ -127,7 +127,7 @@ class LinkedList {
     }
     return p.val
   }
-  get length() {
+  get size() {
     var p = this.head
     var l = 0
     while (p) {
@@ -196,7 +196,7 @@ class MySet {
   has(val) {
     return this._elements.includes(val)
   }
-  size() {
+  get size() {
     return this._elements.length
   }
 }

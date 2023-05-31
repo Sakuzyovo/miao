@@ -87,10 +87,6 @@ class LinkedList {
   constructor() {
     this.head = null
     this.tail = null
-
-    for (var item of initVals) {
-      this.append(item)
-    }
   }
   append(val) {
     var node = {
@@ -197,7 +193,7 @@ class MySet {
     return this._elements.includes(val)
   }
   get size() {
-    return this._elements.length
+    return this._elements.size
   }
 }
 

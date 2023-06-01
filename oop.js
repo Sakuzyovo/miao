@@ -245,3 +245,72 @@ class MyMap {
 }
 
 
+class PriorityQueue {
+  constructor(initials = [], predicate = (it) => it) {
+    if (typeof predicate !== 'function') {
+      throw new TypeError('predicate must be a function,got:' + predicate)
+    }
+    this._elements = []
+    this._predicate = predicate
+    for (var item of initials) {
+      this.push(item)
+    }
+  }
+  _swap(i, j) {
+    var t = this._elements[i]
+    this._elements[i] = this._elements[j]
+    this._elements[j] = t
+  }
+  _heapup(pos) {
+    if (pos == 0) {
+      return
+    }
+    var predicate = this._predicate
+    var parentpos = (pos - 1) >> 1
+    if (pradicate(this._elements[pos]) > predicate(this._elements[parentpos])) {
+      this._swap(pos, parentpos)
+      this._headup(parentpos)
+    }
+  }
+  _heapDown(pos) {
+    var leftpos = 2 * pos + 1
+    var right = 2 * pos + 2
+    var maxidx = pos
+    var predicate = this._predicate
+    if (leftpos < this._elements.length && predicate(this._elements[leftpos]) > predicate(this._elements[maxidx])) {
+      maxidx = leftpos
+
+    }
+    if (rightpos < this._elements.length && predicate(this._elements[rightpos]) > predicate(this._elements[maxidx])) {
+      maxidx = rightpos
+    }
+    if (maxidx !== pos) {
+      this._swap(maxidx, pos)
+      this._heapDown(maxidx)
+    }
+  }
+  push(val) {
+    this._elements.push(val)
+    this, _headup(this._elements.length - 1)
+    return this
+  }
+  pop() {
+    if (this._elements.length == 0) {
+      return undefined
+    }
+    if (this._elements.length == 1) {
+      return this, this._elements.pop()
+    }
+    var resule = this._elements[0]
+    var last = this._elements.pop()
+    this._elements[0] = last
+    this._heapDown(0)
+    return result
+  }
+  peek() {
+    return this._elements[0]
+  }
+  get size() {
+    return this._elements.length
+  }
+}

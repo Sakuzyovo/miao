@@ -267,7 +267,7 @@ class PriorityQueue {
     }
     var predicate = this._predicate
     var parentpos = (pos - 1) >> 1
-    if (pradicate(this._elements[pos]) > predicate(this._elements[parentpos])) {
+    if (predicate(this._elements[pos]) > predicate(this._elements[parentpos])) {
       this._swap(pos, parentpos)
       this._headup(parentpos)
     }
@@ -301,7 +301,7 @@ class PriorityQueue {
     if (this._elements.length == 1) {
       return this, this._elements.pop()
     }
-    var resule = this._elements[0]
+    var result = this._elements[0]
     var last = this._elements.pop()
     this._elements[0] = last
     this._heapDown(0)

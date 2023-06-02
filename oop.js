@@ -269,7 +269,7 @@ class PriorityQueue {
     var parentpos = (pos - 1) >> 1
     if (predicate(this._elements[pos]) > predicate(this._elements[parentpos])) {
       this._swap(pos, parentpos)
-      this._headup(parentpos)
+      this._heapup(parentpos)
     }
   }
   _heapDown(pos) {
@@ -291,7 +291,7 @@ class PriorityQueue {
   }
   push(val) {
     this._elements.push(val)
-    this._headup(this._elements.length - 1)
+    this._heapup(this._elements.length - 1)
     return this
   }
   pop() {

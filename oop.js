@@ -274,7 +274,7 @@ class PriorityQueue {
   }
   _heapDown(pos) {
     var leftpos = 2 * pos + 1
-    var right = 2 * pos + 2
+    var rightpos = 2 * pos + 2
     var maxidx = pos
     var predicate = this._predicate
     if (leftpos < this._elements.length && predicate(this._elements[leftpos]) > predicate(this._elements[maxidx])) {

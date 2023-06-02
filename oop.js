@@ -246,7 +246,7 @@ class MyMap {
 
 
 class PriorityQueue {
-  constructor(initials = [], predicate = (it) => it) {
+  constructor(initials = [], predicate = it => it) {
     if (typeof predicate !== 'function') {
       throw new TypeError('predicate must be a function,got:' + predicate)
     }
@@ -291,7 +291,7 @@ class PriorityQueue {
   }
   push(val) {
     this._elements.push(val)
-    this, _headup(this._elements.length - 1)
+    this._headup(this._elements.length - 1)
     return this
   }
   pop() {
@@ -330,4 +330,9 @@ function heapSort(ary) {
     _heapDown(ary, 0, i)
   }
   return ary
+}
+function swap(array, i, j) {
+  var t = array[i]
+  array[i] = array[j]
+  array[j] = t
 }

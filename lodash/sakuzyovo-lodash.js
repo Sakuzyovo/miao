@@ -2,7 +2,7 @@ var sakuzyovo = {
   chunk: function (array, size) {
     var a = []
     var count = 0
-    for (var i = 0; i < array.length - 1; i += size) {
+    for (var i = 0; i < array.length; i += size) {
       a.push(array.slice(i, i + size))
     }
     return a
@@ -23,5 +23,6 @@ var sakuzyovo = {
       array.push(values[i])
     }
     return array
-  }
+  },
+
 }

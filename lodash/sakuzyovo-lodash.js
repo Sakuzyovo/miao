@@ -31,18 +31,8 @@ var sakuzyovo = {
 
   //   }
   // }
-  drop: function (array, number) {
-    if (number == null) {
-      return array.slice(1, array.length)
-    }
-    if (number == 0) {
-      return array
-    }
-
-    for (var i = 1; i <= number; i++) {
-      array.shift()
-    }
-    return array
+  drop: function (array, number = 1) {
+    return array.slice(number)
   }
   ,
   dropRight: function (array, number) {

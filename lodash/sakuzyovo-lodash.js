@@ -33,7 +33,7 @@ var sakuzyovo = {
   // }
   drop: function (array, number) {
     if (number == null) {
-      return array.splice(0, 1)
+      return array.slice(1, array.length)
     }
     if (number == 0) {
       return array
@@ -47,7 +47,7 @@ var sakuzyovo = {
   ,
   dropRight: function (array, number) {
     if (number == null) {
-      return array.pop()
+      return array.slice(0, array.length - 1)
     }
     if (number == 0) {
       return array

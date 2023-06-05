@@ -93,10 +93,25 @@ var sakuzyovo = {
         }
       }
       else {
-        result.push(i)
+        result.push(item)
       }
     }
     return result
   }
-
+  ,
+  flattenDepth: (array, depth = 1) => {
+    var result = []
+    for (var item of array) {
+      if (Array.isArray(item)) {
+        var sz = sakuzyovo.flattenDeep(item, depth - 1)
+        for (var a of sz) {
+          result.push(a)
+        }
+      }
+      else {
+        result.push(item)
+      }
+    }
+    return result
+  }
 }

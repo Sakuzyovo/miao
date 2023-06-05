@@ -19,12 +19,17 @@ var sakuzyovo = {
   }
   ,
   concat: function (array, ...values) {
+    var result = array
     for (var i = 0; i < values.length; i++) {
-      if (values[i]) {
-        array.push(values[i][0])
+      if (Array.isArray(values[i])) {
+        for (var j = 0; j < values[i].length; j++) {
+          result.push(val[i][j])
+        }
+      } else {
+        result.push(Val[i])
       }
     }
-    return array
+    return result
   },
   // difference: function (array, brray) {
 
@@ -58,8 +63,23 @@ var sakuzyovo = {
     return array
   }
   ,
-  findindex: () => {
+  // findindex: (array,predicate = _.identity, fromIndex = 0) => {
 
 
+  // }
+  flatten: (array) => {
+    var result = []
+    for (var i of array) {
+      if (Array.isArray(i)) {
+        for (var a = 0; a < i.length; a++) {
+          result.push(item[a])
+        }
+      }
+      else {
+        result.push(i)
+      }
+    }
+    return result
   }
+
 }

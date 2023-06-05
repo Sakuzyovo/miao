@@ -81,5 +81,22 @@ var sakuzyovo = {
     }
     return result
   }
+  ,
+
+  flattenDeep: (array) => {
+    var result = []
+    for (var item of array) {
+      if (Array.isArray(item)) {
+        var sz = sakuzyovo.flattenDeep(item)
+        for (var a of sz) {
+          result.push(a)
+        }
+      }
+      else {
+        result.push(i)
+      }
+    }
+    return result
+  }
 
 }

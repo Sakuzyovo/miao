@@ -20,9 +20,15 @@ var sakuzyovo = {
   ,
   concat: function (array, ...values) {
     for (var i = 0; i < values.length; i++) {
-      array.push(values[i])
+      array.push(values[i[0]])
     }
     return array
   },
+  difference: function (array, brray) {
 
+    for (var i = 0, j = 0; i < array.length, j < brray.length; i++, j++) {
+      [1, 2][2, 3]
+
+    }
+  }
 }

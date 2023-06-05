@@ -20,7 +20,7 @@ var sakuzyovo = {
   ,
   concat: function (array, ...values) {
     for (var i = 0; i < values.length; i++) {
-      array.push(values[i[0]])
+      array.push(values[i][0])
     }
     return array
   },

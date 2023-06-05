@@ -24,11 +24,38 @@ var sakuzyovo = {
     }
     return array
   },
-  difference: function (array, brray) {
+  // difference: function (array, brray) {
 
-    for (var i = 0, j = 0; i < array.length, j < brray.length; i++, j++) {
-      [1, 2][2, 3]
+  //   for (var i = 0, j = 0; i < array.length, j < brray.length; i++, j++) {
+  //     [1, 2][2, 3]
 
+  //   }
+  // }
+  drop: function (array, number) {
+    if (number == null) {
+      return array.splice(0, 1)
     }
+    if (number == 0) {
+      return array
+    }
+
+    for (var i = 1; i <= number; i++) {
+      array.shift()
+    }
+    return array
+  }
+  ,
+  dropRight: function (array, number) {
+    if (number == null) {
+      return array.pop()
+    }
+    if (number == 0) {
+      return array
+    }
+
+    for (var i = 1; i <= number; i++) {
+      array.pop()
+    }
+    return array
   }
 }

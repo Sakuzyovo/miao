@@ -100,6 +100,9 @@ var sakuzyovo = {
   }
   ,
   flattenDepth: (array, depth = 1) => {
+    if (depth == 0) {
+      return array.slice()
+    }
     var result = []
     for (var item of array) {
       if (Array.isArray(item)) {

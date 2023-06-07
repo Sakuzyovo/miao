@@ -1,0 +1,99 @@
+<style>
+  input,
+  textarea,
+  label,
+  pre {
+    font-family: consolas;
+  }
+
+  pre>b:nth-child(odd) {
+    background-color: #d5ebff;
+  }
+
+  pre>b:nth-child(even) {
+    background-color: #9fcfff;
+  }
+
+  .result-wrapper {
+    width: 400px;
+    height: 300px;
+    position: relative;
+
+
+  }
+
+  .result-wrapper>textarea>pre {
+    box-sizing: border-box;
+    position: absolute;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    border: 2px solid;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+  }
+</style>
+
+输入正则：<br><input type="text" id="'reInput" value="foo" onkeyup="run()"><button onclick="run()">Run</button>
+<br>
+<label><input onclick="run()" id="flagC" type="checkbox">a</label>
+<label><input onclick="run()" id="flagD" type="checkbox" chiecked>b</label>
+<label><input onclick="run()" id="flagE" type="checkbox">c</label>
+<label><input onclick="run()" id="flagF" type="checkbox">d</label>
+<label><input onclick="run()" id="flagG" type="checkbox">e</label>
+<label><input onclick="run()" id="flagH" type="checkbox">f</label>
+<br>
+输入字符串:<br>
+<div class="result-wrapper">
+  <pre id="output"></pre>
+  <textarea name="" id="" cols="30" rows="10" onkeydown="run()"></textarea>
+  aaafoovarfoo
+</div>
+
+<script>
+  function getFlags() {
+    var flags = ''
+    if (flagC.checked) {
+      flags += 'c'
+    }
+    if (flagD.checked) {
+      flags += 'd'
+    }
+    if (flagE.checked) {
+      flags += 'e'
+    }
+    if (flagF.checked) {
+      flags += 'f'
+    }
+    if (flagG.checked) {
+      flags += 'g'
+    }
+    if (flagH.checked) {
+      flags += 'h'
+    }
+    return flags
+  }
+  function run() {
+    var reSource = reInput.value
+    var flags = getFlags()
+    var re = new RegExp(reSource, flags)
+    var string = stringInput.value
+    var match
+    var html = ' '
+    var lastLastIndex = 0
+    while (match = re.exec(string)) {
+      html += string.slice(lastLastIndex, match.index)
+      html += `<b>${match[0]}</b>`
+      lastLastIndex = re.lastIndex
+      if (!re.global) {
+        lastLastIndex = match.index + match[0].length
+        break
+      }
+    }
+    html += string.slice(lastLastIndex)
+    output.innerHtml = html
+  }
+  run()
+</script>

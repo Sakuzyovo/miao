@@ -7,7 +7,7 @@
   }
 
   pre>b:nth-child(odd) {
-    background-color: #d5ebff;
+    background-color: #84afd7;
   }
 
   pre>b:nth-child(even) {
@@ -25,53 +25,60 @@
   .result-wrapper>textarea>pre {
     box-sizing: border-box;
     position: absolute;
-    font-size: 24px;
-    padding: 0;
+    font-size: 40px;
+    padding: 5px;
     margin: 0;
     border: 2px solid;
     border-radius: 2px;
     width: 100%;
     height: 100%;
     background-color: transparent;
+    word-break: break-all;
+    white-space: break-spaces;
+
+  }
+
+  label input {
+    background-color: red;
   }
 </style>
 
-输入正则：<br><input type="text" id="'reInput" value="foo" onkeyup="run()"><button onclick="run()">Run</button>
+输入正则：<br><input type="text" id="reInput" value="foo" oninput="run()"><button onclick="run()">Run</button>
 <br>
-<label><input onclick="run()" id="flagC" type="checkbox">a</label>
-<label><input onclick="run()" id="flagD" type="checkbox" chiecked>b</label>
-<label><input onclick="run()" id="flagE" type="checkbox">c</label>
-<label><input onclick="run()" id="flagF" type="checkbox">d</label>
-<label><input onclick="run()" id="flagG" type="checkbox">e</label>
-<label><input onclick="run()" id="flagH" type="checkbox">f</label>
+<label><input onclick="run()" id="flagI" type="checkbox">i</label>
+<label><input onclick="run()" id="flagG" type="checkbox" chiecked>g</label>
+<label><input onclick="run()" id="flagM" type="checkbox">m</label>
+<label><input onclick="run()" id="flagS" type="checkbox">s</label>
+<label><input onclick="run()" id="flagU" type="checkbox">u</label>
+<label><input onclick="run()" id="flagY" type="checkbox">y</label>
 <br>
 输入字符串:<br>
 <div class="result-wrapper">
   <pre id="output"></pre>
-  <textarea name="" id="" cols="30" rows="10" onkeydown="run()"></textarea>
-  aaafoovarfoo
+  <textarea id="stringInput" cols="30" rows="10" oninput="run()">afooafooafoDWWovarfoo</textarea>
+
 </div>
 
 <script>
   function getFlags() {
     var flags = ''
-    if (flagC.checked) {
-      flags += 'c'
-    }
-    if (flagD.checked) {
-      flags += 'd'
-    }
-    if (flagE.checked) {
-      flags += 'e'
-    }
-    if (flagF.checked) {
-      flags += 'f'
+    if (flagI.checked) {
+      flags += 'i'
     }
     if (flagG.checked) {
       flags += 'g'
     }
-    if (flagH.checked) {
-      flags += 'h'
+    if (flagM.checked) {
+      flags += 'm'
+    }
+    if (flagS.checked) {
+      flags += 's'
+    }
+    if (flagU.checked) {
+      flags += 'u'
+    }
+    if (flagY.checked) {
+      flags += 'y'
     }
     return flags
   }
@@ -81,7 +88,7 @@
     var re = new RegExp(reSource, flags)
     var string = stringInput.value
     var match
-    var html = ' '
+    var html = ''
     var lastLastIndex = 0
     while (match = re.exec(string)) {
       html += string.slice(lastLastIndex, match.index)
@@ -93,7 +100,7 @@
       }
     }
     html += string.slice(lastLastIndex)
-    output.innerHtml = html
+    output.innerHTML = html
   }
   run()
 </script>

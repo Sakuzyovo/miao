@@ -118,7 +118,7 @@ var sakuzyovo = {
     return result
   }
   ,
-  propertyOf: (str) => {
+  parseJSON: (str) => {
     var i = 0
     return parseValue()
 

@@ -155,7 +155,7 @@ var sakuzyovo = {
         var token = str.slice(i, i + 4)
         if (token == 'null') {
           i += 4
-          return true
+          return null
         } else {
           throw new SyntaxError(`在${i}的位置遇到了错误的token`)
         }

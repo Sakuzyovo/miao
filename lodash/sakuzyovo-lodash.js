@@ -117,4 +117,130 @@ var sakuzyovo = {
     }
     return result
   }
+  ,
+  propertyOf: (str) => {
+    var i = 0
+    return parseValue()
+
+    function parseValue() {
+      var char = str[i]
+      if (char == '{') {
+        return parseObject()
+      }
+      if (char == '[') {
+        return parseArray()
+      }
+      if (char == '"') {
+        return parseString()
+      }
+      if (char == 't') {
+        var token = str.slice(i, i + 4)
+        if (token == 'true') {
+          i += 4
+          return true
+        } else {
+          throw new SyntaxError(`在${i}的位置遇到了错误的token`)
+        }
+      }
+      if (char == 'f') {
+        var token = str.slice(i, i + 5)
+        if (token == 'false') {
+          i += 5
+          return false
+        } else {
+          throw new SyntaxError(`在${i}的位置遇到了错误的token`)
+        }
+      }
+      if (char == 'n') {
+        var token = str.slice(i, i + 4)
+        if (token == 'null') {
+          i += 4
+          return true
+        } else {
+          throw new SyntaxError(`在${i}的位置遇到了错误的token`)
+        }
+      }
+      return parseNumber()
+    }
+
+
+    function parseNumber() {
+      var start = i
+      while (str[i] >= '0' && str[i] <= '9') {
+        i++
+      }
+      return Number(str.slice(start, i))
+    }
+
+    function parseString() {
+      i++
+      var start = i
+      while (str[i] !== '"' && i < str.length) {
+        i++
+      }
+      if (str[i] !== '"') {
+        throw new SyntaxError(`未结束的字符串，它的起点为` + start)
+      }
+      var end = i
+      i++
+      return str.slice(start, end)
+    }
+
+    function parseArray() {
+      var result = []
+      i++
+      if (str[i] == ']') {
+        i++
+        return result
+
+      }
+      while (i < str.length) {
+        var value = parseValue()
+        result.push(value)
+        if (str[i] == ',') {
+          i++
+          continue
+        }
+        if (str[i] == ']') {
+          i++
+          break
+        }
+      }
+      return result
+    }
+    function parseObject() {
+      var result = {}
+      i++
+      skipSpace()
+      if (str[i] == '}') {
+        i++
+        return result
+      }
+      while (i < str.length) {
+        var name = parseString()
+        skipSpace()
+        i++
+        skipSpace()
+        var value = parseValue()
+        result[name] = value
+        if (str[i] == ',') {
+          i++
+          continue
+        }
+        if (str[i] == '}') {
+          i++
+          break
+        }
+      }
+      return result
+    }
+    function skipSpace() {
+      while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\r') {
+        i++
+      }
+      return
+    }
+  }
 }
+
+

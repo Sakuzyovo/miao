@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 50px;
+      height: 50px;
+      top: 200px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <p style="text-align:center">
+    <img class="sum" src="https://img01.jituwang.com/180801/256619-1PP111554065.jpg" style="position: absolute">
+    <img class="moon" style="position: absolute"
+      src="https://img1.baidu.com/it/u=1620330525,2553631050&fm=253&fmt=auto&app=138&f=PNG?">
+    <img class="Earth" src="https://img0.baidu.com/it/u=3693240112,2477063984&fm=253&fmt=auto&app=138&f=GIF?"
+      style="position: absolute;">
+  </p>
+  <script>
+    var moon = document.querySelector(".moon")
+    var sum = document.querySelector(".sum")
+    var Earth = document.querySelector(".Earth")
+    var angle = 0, lastTime = null, angle1 = 0
+    function animate(time) {
+      if (lastTime != null)
+        angle += (time - lastTime) * 0.001
+      angle1 += (time - lastTime) * 0.01
+      lastTime = time
+      Earth.style.top = (Math.sin(angle) * 150 + sum.offsetTop) + "px"
+      Earth.style.left = (Math.cos(angle) * 150 + sum.offsetLeft) + "px"
+      moon.style.top = (Math.sin(angle1) * 50 + Earth.offsetTop) + "px"
+      moon.style.left = (Math.cos(angle1) * 50 + Earth.offsetLeft) + "px"
+      requestAnimationFrame(animate)
+
+
+    }
+    requestAnimationFrame(animate)
+  </script>
+</body>
+
+</html>

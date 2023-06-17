@@ -18,7 +18,7 @@
 
 <body>
   <p style="text-align:center">
-    <img class="sum" src="https://img01.jituwang.com/180801/256619-1PP111554065.jpg" style="position: absolute">
+    <img class="sun" src="https://img01.jituwang.com/180801/256619-1PP111554065.jpg" style="position: absolute">
     <img class="moon" style="position: absolute"
       src="https://img1.baidu.com/it/u=1620330525,2553631050&fm=253&fmt=auto&app=138&f=PNG?">
     <img class="Earth" src="https://img0.baidu.com/it/u=3693240112,2477063984&fm=253&fmt=auto&app=138&f=GIF?"
@@ -26,16 +26,16 @@
   </p>
   <script>
     var moon = document.querySelector(".moon")
-    var sum = document.querySelector(".sum")
+    var sun = document.querySelector(".sun")
     var Earth = document.querySelector(".Earth")
     var angle = 0, lastTime = null, angle1 = 0
     function animate(time) {
       if (lastTime != null)
         angle += (time - lastTime) * 0.001
-      angle1 += (time - lastTime) * 0.01
+      angle1 += (time - lastTime) * 0.300
       lastTime = time
-      Earth.style.top = (Math.sin(angle) * 150 + sum.offsetTop) + "px"
-      Earth.style.left = (Math.cos(angle) * 150 + sum.offsetLeft) + "px"
+      Earth.style.top = (Math.sin(angle) * 150 + sun.offsetTop) + "px"
+      Earth.style.left = (Math.cos(angle) * 150 + sun.offsetLeft) + "px"
       moon.style.top = (Math.sin(angle1) * 50 + Earth.offsetTop) + "px"
       moon.style.left = (Math.cos(angle1) * 50 + Earth.offsetLeft) + "px"
       requestAnimationFrame(animate)
@@ -44,6 +44,7 @@
     }
     requestAnimationFrame(animate)
   </script>
+
 </body>
 
 </html>

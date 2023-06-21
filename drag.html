@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .draggable {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+    }
+
+    .draggable h1.window-title {
+      margin: 0;
+      font-size: 14px;
+      background-color: gray;
+      cursor: move;
+    }
+
+    .draggable .resizer {
+      cursor: nwse-resize;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      bottom: 0;
+      right: 0;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="draggable" style="width:200px;height:160px;left:0;top:0;background-color: aquamarine">
+    <div>
+      <h1 class="window-title">窗口1</h1>
+    </div>
+    <span class="resizer"></span>
+  </div>
+  <div class="draggable" style="width:200px;height:160px;left:0;top:0;background-color: pink">
+    <h1 class="window-title">窗口2</h1>
+    <span class="resizer"></span>
+  </div>
+  <div class="draggable" style="width:200px;height:160px;left:0;top:0;background-color: chocolate">
+    <h1 class="window-title">窗口3</h1>
+    <span class="resizer"></span>
+  </div>
+
+  <script>
+    //鼠标起始位置
+    var startX = 0
+    var startY = 0
+
+    var el = null
+    var elStartX = 0
+    var elStartY = 0
+    var z = 10
+    window.addEventListener('mousedown', e => {
+      if (e.target.matches('.draggable')) {
+        e.preventDefault()
+        el = e.target
+        el.style.zIndex = z++
+        startX = e.clientX
+        startY = e.clientY
+        elStartX = parseFloat(el.style.left)
+        elStartY = parseFloat(el.style.top)
+        window.addEventListener('mousemove', onMove)
+      }
+    })
+
+    function onMove(e) {
+      if (e.which == 0 || e.buttons == 0) {
+        window.removeEventListener('mousemove', onMove)
+      } else {
+        var moveX = e.clientX - startX
+        var moveY = e.clientY - startY
+
+        var left = elStartX + moveX
+        var top = elStartY + moveY
+
+        if (left < 0) {
+          left = 0
+        }
+        if (left > window.innerWidth - el.offsetWinth) {
+          left = window.innerWidth - el.offsetWinth
+        }
+        if (top > window.innerHeight - el.offsetHeight) {
+          top = window.innerHeight - el.offsetHeight
+        }
+        if (top < 0) {
+          top = 0
+        }
+
+        el.style.left = left + 'px'
+        el.style.top = top + 'px'
+        lastX = e.clientX
+        lastY = e.clientY
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>

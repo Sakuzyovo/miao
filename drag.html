@@ -35,15 +35,15 @@
 <body>
 
   <div class="draggable" style="width:200px;height:160px;left:0;top:0;background-color: aquamarine">
-    <div>
-      <h1 class="window-title">窗口1</h1>
-    </div>
+    <h1 class="window-title">窗口1</h1>
     <span class="resizer"></span>
   </div>
+
   <div class="draggable" style="width:200px;height:160px;left:0;top:0;background-color: pink">
     <h1 class="window-title">窗口2</h1>
     <span class="resizer"></span>
   </div>
+
   <div class="draggable" style="width:200px;height:160px;left:0;top:0;background-color: chocolate">
     <h1 class="window-title">窗口3</h1>
     <span class="resizer"></span>
@@ -58,10 +58,11 @@
     var elStartX = 0
     var elStartY = 0
     var z = 10
+    var disrance = 20
     window.addEventListener('mousedown', e => {
-      if (e.target.matches('.draggable')) {
+      if (e.target.matches('.draggable>h1.window-title')) {
         e.preventDefault()
-        el = e.target
+        el = e.target.closest('.draggable')
         el.style.zIndex = z++
         startX = e.clientX
         startY = e.clientY
@@ -81,17 +82,18 @@
         var left = elStartX + moveX
         var top = elStartY + moveY
 
-        if (left < 0) {
+        if (left < disrance) {
           left = 0
         }
-        if (left > window.innerWidth - el.offsetWinth) {
-          left = window.innerWidth - el.offsetWinth
+        if (left > window.innerWidth - el.offsetWidth - disrance) {
+          left = window.innerWidth - el.offsetWidth
         }
-        if (top > window.innerHeight - el.offsetHeight) {
-          top = window.innerHeight - el.offsetHeight
-        }
-        if (top < 0) {
+
+        if (top < disrance) {
           top = 0
+        }
+        if (top > window.innerHeight - el.offsetHeight - disrance) {
+          top = window.innerHeight - el.offsetHeight
         }
 
         el.style.left = left + 'px'
